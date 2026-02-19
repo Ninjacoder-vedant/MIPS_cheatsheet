@@ -44,8 +44,8 @@
 ### Branch instuctions
 | Instruction             | Syntax            | Branch Condition | PC Update                  | Range                       |
 | ----------------------- | ----------------- | ---------------- | -------------------------- | --------------------------- |
-| **Branch if Equal**     | `beq rs, rt, imm` | `R[rs] == R[rt]` | `PC = PC + 4 + BranchAddr` | ±$2^{15}$ instructions (~±128KB) |
-| **Branch if Not Equal** | `bne rs, rt, imm` | `R[rs] != R[rt]` | `PC = PC + 4 + BranchAddr` | ±$2^{15}$ instructions (~±128KB) |
+| **Branch if Equal**     | `beq rs, rt, imm` | `R[rs] == R[rt]` | `PC = PC + 4 + BranchAddr` | ± $2^{15}$ instructions (~±128KB) |
+| **Branch if Not Equal** | `bne rs, rt, imm` | `R[rs] != R[rt]` | `PC = PC + 4 + BranchAddr` | ± $2^{15}$ instructions (~±128KB) |
 
 ### Memory Access (Load/Store)
 `EA = R[rs] + SignExtImm`\
@@ -63,7 +63,7 @@
 ### Alignment
 **Imp:** In load half-word/byte full word is read and we choose half-word or byte based on EA
 
-Example: To read half-word ar 0x1002 we need to read whole word
+Example: To read half-word at 0x1002 we need to read whole word
 ```Address     Data
 0x1000      0x12
 0x1001      0x34
