@@ -52,12 +52,12 @@
 `SignExtImm = {16{imm[15]},imm}`
 | Instruction                | Syntax            | Operation              | Extension / Notes                 | Alignment      |
 | -------------------------- | ----------------- | ------------------------------------ | --------------------------------- | -------------- |
-| **Load Word**              | `lw rt, imm(rs)`  | `R[rt] = Memory[EA]` | Loads full 32 bits                | EA % 4 == 0  |
-| **Load Halfword Unsigned** | `lhu rt, imm(rs)` | `R[rt] = {16'b0, Memory[EA](15:0)}`                                 | Zero-extend 16 → 32 bits          | EA % 2 == 0 |
+| **Load Word**              | `lw rt, imm(rs)`  | `R[rt] = Memory[EA]` | Loads full 32 bits                | addr % 4 == 0  |
+| **Load Halfword Unsigned** | `lhu rt, imm(rs)` | `R[rt] = {16'b0, Memory[EA](15:0)}`                                 | Zero-extend 16 → 32 bits          | addr % 2 == 0 |
 | **Load Byte Unsigned**     | `lbu rt, imm(rs)` | `R[rt] = {24'b0, Memory[EA](7:0)}`                                 | Zero-extend 8 → 32 bits           | No restriction |
 | **Load Upper Immediate**   | `lui rt, imm`     | `R[rt] = {imm, 16'b0}`               | Immediate placed in upper 16 bits | —              |
-| **Store Word**             | `sw rt, imm(rs)`  | `Memory[EA] = R[rt]`                 | Stores full 32 bits               | EA % 4 == 0  |
-| **Store Halfword**         | `sh rt, imm(rs)`  | `Memory[EA](15:0) = R[rt](15:0)`                         | Stores lower or upper 16 bits based on EA             | EA % 2 == 0  |
+| **Store Word**             | `sw rt, imm(rs)`  | `Memory[EA] = R[rt]`                 | Stores full 32 bits               | addr % 4 == 0  |
+| **Store Halfword**         | `sh rt, imm(rs)`  | `Memory[EA](15:0) = R[rt](15:0)`                         | Stores lower or upper 16 bits based on EA             | addr % 2 == 0  |
 | **Store Byte**             | `sb rt, imm(rs)`  | `Memory[EA](7:0) = R[rt](7:0)`                         | Stores one of 4 Bytes based on EA              | No restriction |
 
 ### Alignment
